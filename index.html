@@ -51,19 +51,19 @@
           "requestToken",
           "https://youdontknowthis123.netlify.app"
         );
+        window.addEventListener("message", function (event) {
+          if (event.origin !== "https://youdontknowthis123.netlify.app") {
+            return;
+          }
+          if (event.data.hasToken) {
+            window.location.href =
+              "https://youdontknowthis123.netlify.app/home.html";
+          } else {
+            console.log("OOPS something went wrong!!");
+          }
+        });
       }
 
-      window.addEventListener("message", function (event) {
-        if (event.origin !== "https://youdontknowthis123.netlify.app") {
-          return;
-        }
-        if (event.data.hasToken) {
-          window.location.href =
-            "https://youdontknowthis123.netlify.app/home.html";
-        } else {
-          console.log("OOPS something went wrong!!");
-        }
-      });
     </script>
   </body>
 </html>
