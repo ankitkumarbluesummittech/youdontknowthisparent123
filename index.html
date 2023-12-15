@@ -7,31 +7,36 @@
   </head>
   <body>
     <h1>Hello Parent test</h1>
+    <button onclick="isLoggedIn()">REGISTER/LOGIN</button>
     <iframe
-    src="https://youdontknowthis123.netlify.app"
-    title="youdontknowthis123"
+      src="https://youdontknowthis123.netlify.app"
+      title="youdontknowthis123"
     ></iframe>
 
     <script>
-      // Event listener to receive messages from the iframe
-      window.addEventListener(
-        "message",
-        function (event) {
-          // Check the origin of the message for security purposes
-          if (event.origin !== "https://youdontknowthis123.netlify.app") {
-            return;
-          }
-          console.log(event.data, "Aisa kya hai bhai");
-          // Check for the token presence and redirect accordingly
-          if (event.data.hasToken) {
-            window.location.href = "https://youdontknowthis123.netlify.app/home.html";
-            console.log(event);
-          } else {
-            // Keep the user on https://olsights.com
-          }
-        },
-        false
-      );
+      function isLoggedIn() {
+        // Event listener to receive messages from the iframe
+        window.addEventListener(
+          "message",
+          function (event) {
+            // Check the origin of the message for security purposes
+            if (event.origin !== "https://youdontknowthis123.netlify.app") {
+              return;
+            }
+            console.log(event.data, "Aisa kya hai bhai");
+            // Check for the token presence and redirect accordingly
+            if (event.data.hasToken) {
+              window.location.href =
+                "https://youdontknowthis123.netlify.app/home.html";
+              console.log(event);
+            } else {
+              // Keep the user on https://olsights.com
+              console.log("OOPS something went wrong!!");
+            }
+          },
+          false
+        );
+      }
     </script>
   </body>
 </html>
