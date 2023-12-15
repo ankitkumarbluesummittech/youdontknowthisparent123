@@ -22,7 +22,7 @@
           if (event.origin !== "https://youdontknowthis123.netlify.app") {
             return;
           }
-
+          console.log(event.data, "Aisa kya hai bhai");
           // Check for the token presence and redirect accordingly
           if (event.data.name) {
             window.location.href = "https://youdontknowthis123.netlify.app";
