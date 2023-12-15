@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello Parent</h1>
+    <iframe
+    src="https://youdontknowthis123.netlify.app"
+    title="youdontknowthis123"
+    ></iframe>
+
+    <script>
+      // Event listener to receive messages from the iframe
+      window.addEventListener(
+        "message",
+        function (event) {
+          console.log(event);
+          // Check the origin of the message for security purposes
+          if (event.origin !== "https://youdontknowthis123.netlify.app") {
+            return;
+          }
+
+          // Check for the token presence and redirect accordingly
+          if (event.data.name) {
+            // window.location.href = "https://app.olsights.com/home";
+            console.log(event);
+          } else {
+            // Keep the user on https://olsights.com
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
