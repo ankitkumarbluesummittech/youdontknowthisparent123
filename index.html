@@ -17,9 +17,11 @@
     <script>
       function isLoggedIn() {
         // Event listener to receive messages from the iframe
+        console.log("Clicked...");
         window.addEventListener(
           "message",
           function (event) {
+            console.log("Are we here!!!");
             // Check the origin of the message for security purposes
             if (event.origin !== "https://youdontknowthis123.netlify.app") {
               return;
