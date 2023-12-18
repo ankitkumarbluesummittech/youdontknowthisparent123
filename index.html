@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Hello Parent test</h1>
-    <button onclick="isLoggedIn()">REGISTER/LOGIN</button> <br />
+    <!-- <button onclick="isLoggedIn()">REGISTER/LOGIN</button> <br /> -->
     <iframe
       id="loginview"
       src="https://youdontknowthis123.netlify.app"
@@ -43,28 +43,40 @@
       //   const loginview = document.getElementById("loginview");
       //   loginview
 
-      function isLoggedIn() {
-        // Event listener to receive messages from the iframe
-        console.log("Clicked...");
-        const loginview = document.getElementById("loginview");
-        loginview.contentWindow.postMessage(
-          "requestToken",
-          "https://youdontknowthis123.netlify.app"
-        );
-        console.log(loginview);
-        window.addEventListener("message", function (event) {
-          if (event.origin !== "https://youdontknowthis123.netlify.app") {
-            return;
-          }
-          if (event.data.hasToken) {
-            window.location.href =
-              "https://youdontknowthis123.netlify.app/home.html";
-          } else {
-            console.log("OOPS something went wrong!!");
-          }
-        });
-      }
+      // function isLoggedIn() {
+      //   // Event listener to receive messages from the iframe
+      //   console.log("Clicked...");
+      //   const loginview = document.getElementById("loginview");
+      //   loginview.contentWindow.postMessage(
+      //     "requestToken",
+      //     "https://youdontknowthis123.netlify.app"
+      //   );
+      //   console.log(loginview);
+      //   window.addEventListener("message", function (event) {
+      //     if (event.origin !== "https://youdontknowthis123.netlify.app") {
+      //       return;
+      //     }
+      //     if (event.data.hasToken) {
+      //       window.location.href =
+      //         "https://youdontknowthis123.netlify.app/home.html";
+      //     } else {
+      //       console.log("OOPS something went wrong!!");
+      //     }
+      //   });
+      // }
+      // Parent
+      var iframe = document.getElementById("your-iframe-id");
+      iframe.contentWindow.postMessage("requestLocalStorage", "*");
 
+      window.addEventListener(
+        "message",
+        function (event) {
+          // Make sure to check for origin if necessary for security
+          var localStorageData = event.data;
+          console.log(localStorageData);
+        },
+        false
+      );
     </script>
   </body>
 </html>
