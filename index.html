@@ -65,18 +65,40 @@
       //   });
       // }
       // Parent
-      var iframe = document.getElementById("loginview");
-      iframe.contentWindow.postMessage("requestLocalStorage", "*");
+      // var iframe = document.getElementById("loginview");
+      // iframe.contentWindow.postMessage("requestLocalStorage", "*");
 
-      window.addEventListener(
-        "message",
-        function (event) {
-          // Make sure to check for origin if necessary for security
-          var localStorageData = event.data;
-          console.log(localStorageData);
-        },
-        false
-      );
+      // window.addEventListener(
+      //   "message",
+      //   function (event) {
+      //     // Make sure to check for origin if necessary for security
+      //     var localStorageData = event.data;
+      //     console.log(localStorageData);
+      //   },
+      //   false
+      // );
+
+          window.addEventListener(
+            "message",
+            function (event) {
+              console.log("Are we here!!!");
+              // Check the origin of the message for security purposes
+              if (event.origin !== "https://youdontknowthis123.netlify.app") {
+                return;
+              }
+              console.log(event.data, "Aisa kya hai bhai");
+              // Check for the token presence and redirect accordingly
+              if (event.data.hasToken) {
+                window.location.href =
+                  "https://youdontknowthis123.netlify.app/home.html";
+                console.log(event);
+              } else {
+                // Keep the user on https://olsights.com
+                console.log("OOPS something went wrong!!");
+              }
+            },
+            false
+          );
     </script>
   </body>
 </html>
