@@ -9,7 +9,7 @@
 
 <body>
   <h1>Hello Parent test</h1>
-  <button class="loginisinview">REGISTER/LOGIN</button> <br />
+  <button class="checkLogin">REGISTER/LOGIN</button> <br />
   <iframe id="loginview" src="https://youdontknowthis123.netlify.app" title="youdontknowthis123"></iframe>
 
   <script>
@@ -75,15 +75,16 @@
     //   },
     //   false
     // );
-    var logindtlsviewLink = document.querySelector('.loginisinview');
+    var logindtlsviewLink = document.querySelector('.checkLogin');
     let isLoggedIn = false;
-
     if (logindtlsviewLink) {
-      if (isLoggedIn) {
-        console.log("LoggedIN");
-      } else {
-        console.log("Open Sidebar");
-      }
+      logindtlsviewLink.addEventListener('click', () => {        
+        if (isLoggedIn) {
+          console.log("LoggedIN");
+        } else {
+          console.log("Open Sidebar");
+        }
+      })
     }
 
     window.addEventListener(
