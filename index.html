@@ -85,12 +85,12 @@
         console.log("Open Sidebar");
       }
     }
-    
+
     window.addEventListener(
       "message",
       function (event) {
         // Check the origin of the message for security purposes
-        if (event.origin !== "https://app.olsights.com") {
+        if (event.origin !== "https://youdontknowthis123.netlify.app") {
           return;
         }
         // Check for the token presence and redirect accordingly
