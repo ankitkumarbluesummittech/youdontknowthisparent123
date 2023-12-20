@@ -101,7 +101,7 @@
           // window.location.href =
           //   "https://app.olsights.com/home";
           console.log(event);
-          tokensjksgd.textContent = event;
+          tokensjksgd.textContent = JSON.stringify(event, null, 2);
           isLoggedIn = true;
         } else {
           // Keep the user on https://olsights.com
