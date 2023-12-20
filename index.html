@@ -1,104 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Hello Parent test</h1>
-    <!-- <button onclick="isLoggedIn()">REGISTER/LOGIN</button> <br /> -->
-    <iframe
-      id="loginview"
-      src="https://youdontknowthis123.netlify.app"
-      title="youdontknowthis123"
-    ></iframe>
 
-    <script>
-      //   function isLoggedIn() {
-      //     // Event listener to receive messages from the iframe
-      //     console.log("Clicked...");
-      //     window.addEventListener(
-      //       "message",
-      //       function (event) {
-      //         console.log("Are we here!!!");
-      //         // Check the origin of the message for security purposes
-      //         if (event.origin !== "https://youdontknowthis123.netlify.app") {
-      //           return;
-      //         }
-      //         console.log(event.data, "Aisa kya hai bhai");
-      //         // Check for the token presence and redirect accordingly
-      //         if (event.data.hasToken) {
-      //           window.location.href =
-      //             "https://youdontknowthis123.netlify.app/home.html";
-      //           console.log(event);
-      //         } else {
-      //           // Keep the user on https://olsights.com
-      //           console.log("OOPS something went wrong!!");
-      //         }
-      //       },
-      //       false
-      //     );
-      //   }
-      //   const loginview = document.getElementById("loginview");
-      //   loginview
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      // function isLoggedIn() {
-      //   // Event listener to receive messages from the iframe
-      //   console.log("Clicked...");
-      //   const loginview = document.getElementById("loginview");
-      //   loginview.contentWindow.postMessage(
-      //     "requestToken",
-      //     "https://youdontknowthis123.netlify.app"
-      //   );
-      //   console.log(loginview);
-      //   window.addEventListener("message", function (event) {
-      //     if (event.origin !== "https://youdontknowthis123.netlify.app") {
-      //       return;
-      //     }
-      //     if (event.data.hasToken) {
-      //       window.location.href =
-      //         "https://youdontknowthis123.netlify.app/home.html";
-      //     } else {
-      //       console.log("OOPS something went wrong!!");
-      //     }
-      //   });
-      // }
-      // Parent
-      // var iframe = document.getElementById("loginview");
-      // iframe.contentWindow.postMessage("requestLocalStorage", "*");
+<body>
+  <h1>Hello Parent test</h1>
+  <button class="loginisinview">REGISTER/LOGIN</button> <br />
+  <iframe id="loginview" src="https://youdontknowthis123.netlify.app" title="youdontknowthis123"></iframe>
 
-      // window.addEventListener(
-      //   "message",
-      //   function (event) {
-      //     // Make sure to check for origin if necessary for security
-      //     var localStorageData = event.data;
-      //     console.log(localStorageData);
-      //   },
-      //   false
-      // );
+  <script>
+    //   function isLoggedIn() {
+    //     // Event listener to receive messages from the iframe
+    //     console.log("Clicked...");
+    //     window.addEventListener(
+    //       "message",
+    //       function (event) {
+    //         console.log("Are we here!!!");
+    //         // Check the origin of the message for security purposes
+    //         if (event.origin !== "https://youdontknowthis123.netlify.app") {
+    //           return;
+    //         }
+    //         console.log(event.data, "Aisa kya hai bhai");
+    //         // Check for the token presence and redirect accordingly
+    //         if (event.data.hasToken) {
+    //           window.location.href =
+    //             "https://youdontknowthis123.netlify.app/home.html";
+    //           console.log(event);
+    //         } else {
+    //           // Keep the user on https://olsights.com
+    //           console.log("OOPS something went wrong!!");
+    //         }
+    //       },
+    //       false
+    //     );
+    //   }
+    //   const loginview = document.getElementById("loginview");
+    //   loginview
 
-          window.addEventListener(
-            "message",
-            function (event) {
-              console.log("Are we here!!!");
-              // Check the origin of the message for security purposes
-              if (event.origin !== "https://youdontknowthis123.netlify.app") {
-                return;
-              }
-              console.log(event.data, "Aisa kya hai bhai");
-              // Check for the token presence and redirect accordingly
-              if (event.data.hasToken) {
-                // window.location.href =
-                //   "https://youdontknowthis123.netlify.app/home.html";
-                console.log(event);
-              } else {
-                // Keep the user on https://olsights.com
-                console.log("OOPS something went wrong!!");
-              }
-            },
-            false
-          );
-    </script>
-  </body>
+    // function isLoggedIn() {
+    //   // Event listener to receive messages from the iframe
+    //   console.log("Clicked...");
+    //   const loginview = document.getElementById("loginview");
+    //   loginview.contentWindow.postMessage(
+    //     "requestToken",
+    //     "https://youdontknowthis123.netlify.app"
+    //   );
+    //   console.log(loginview);
+    //   window.addEventListener("message", function (event) {
+    //     if (event.origin !== "https://youdontknowthis123.netlify.app") {
+    //       return;
+    //     }
+    //     if (event.data.hasToken) {
+    //       window.location.href =
+    //         "https://youdontknowthis123.netlify.app/home.html";
+    //     } else {
+    //       console.log("OOPS something went wrong!!");
+    //     }
+    //   });
+    // }
+    // Parent
+    // var iframe = document.getElementById("loginview");
+    // iframe.contentWindow.postMessage("requestLocalStorage", "*");
+
+    // window.addEventListener(
+    //   "message",
+    //   function (event) {
+    //     // Make sure to check for origin if necessary for security
+    //     var localStorageData = event.data;
+    //     console.log(localStorageData);
+    //   },
+    //   false
+    // );
+    var logindtlsviewLink = document.querySelector('.loginisinview');
+    let isLoggedIn = false;
+
+    if (logindtlsviewLink) {
+      if (isLoggedIn) {
+        console.log("LoggedIN");
+      } else {
+        console.log("Open Sidebar");
+      }
+    }
+    
+    window.addEventListener(
+      "message",
+      function (event) {
+        // Check the origin of the message for security purposes
+        if (event.origin !== "https://app.olsights.com") {
+          return;
+        }
+        // Check for the token presence and redirect accordingly
+        if (event.data.hasToken) {
+          // window.location.href =
+          //   "https://app.olsights.com/home";
+          console.log(event);
+          isLoggedIn = true;
+        } else {
+          // Keep the user on https://olsights.com
+          console.log("OOPS something went wrong!!");
+          isLoggedIn = false;
+        }
+      },
+      false
+    );
+  </script>
+</body>
+
 </html>
