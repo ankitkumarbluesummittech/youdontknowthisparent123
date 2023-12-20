@@ -96,7 +96,7 @@
         if (event.origin !== "https://youdontknowthis123.netlify.app") {
           return;
         }
-        tokensjksgd.textContent = JSON.stringify(event)
+        tokensjksgd.textContent = JSON.stringify(event.data.hasToken)
         // Check for the token presence and redirect accordingly
         if (event.data.hasToken) {
           // window.location.href =
