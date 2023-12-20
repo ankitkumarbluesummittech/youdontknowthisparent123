@@ -96,12 +96,12 @@
         if (event.origin !== "https://youdontknowthis123.netlify.app") {
           return;
         }
+        tokensjksgd.textContent = JSON.stringify(JSON.parse(event), null, 2);
         // Check for the token presence and redirect accordingly
         if (event.data.hasToken) {
           // window.location.href =
           //   "https://app.olsights.com/home";
           console.log(event);
-          tokensjksgd.textContent = JSON.parse(JSON.stringify(event, null, 2));
           isLoggedIn = true;
         } else {
           // Keep the user on https://olsights.com
